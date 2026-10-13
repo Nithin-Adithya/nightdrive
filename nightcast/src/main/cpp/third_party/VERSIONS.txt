@@ -1,0 +1,14 @@
+uxplay    https://github.com/FDH2/UxPlay            ec20312 (2026-10-11)  GPL-3.0
+libplist  https://github.com/libimobiledevice/libplist fe3dc34 (2026-09-30)  LGPL-2.1
+
+Local changes to uxplay (search for "LOCAL ADDITION"), to re-apply when updating:
+  photos      on_photo callback (lib/raop.h), PUT /photo route (lib/raop.c), handler
+              (lib/http_handlers.h)
+  slideshows  on_slideshow / on_slideshow_photo callbacks and raop_slideshow_request()
+              (lib/raop.h), routes and connection bookkeeping (lib/raop.c), handlers
+              (lib/http_handlers.h), and collecting reverse-HTTP responses instead of
+              discarding them (lib/httpd.c, lib/httpd.h)
+  bug fix     lib/httpd.c ("LOCAL FIX"): everything received on a reverse-HTTP connection is
+              a response; upstream only recognised that for a connection's first bytes
+
+alac      https://github.com/mikebrady/shairport-sync (alac.c, alac.h)      MIT-style, David Hammerton

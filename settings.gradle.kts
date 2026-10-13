@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "Nightdrive"
 include(":app")
 include(":mediatest")
+include(":nightcast")

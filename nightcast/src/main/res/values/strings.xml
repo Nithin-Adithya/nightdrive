@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Nightcast</string>
+    <string name="channel_name">Receiver status</string>
+    <string name="unknown_device">iPhone</string>
+
+    <string name="status_ready">Ready as “%1$s”</string>
+    <string name="status_mirroring">Mirroring from %1$s</string>
+    <string name="status_playing">Playing from %1$s</string>
+    <string name="status_casting">Playing video from %1$s</string>
+    <string name="status_photo">Showing photos from %1$s</string>
+    <string name="status_pairing">A new phone wants to connect</string>
+    <string name="status_offline">Waiting for a network</string>
+
+    <string name="idle_title">Ready to mirror</string>
+    <string name="hint_connect">On your iPhone, open Control Centre, tap Screen Mirroring and choose “%1$s”. The phone and this screen must be on the same Wi-Fi or hotspot.</string>
+    <string name="status_network">On the network at %1$s</string>
+    <string name="status_no_network">No network. Join Wi-Fi or the iPhone’s hotspot.</string>
+    <string name="status_starting">Starting…</string>
+    <string name="auto_open">Open automatically when mirroring starts</string>
+    <string name="pin_on">PIN for new phones: On</string>
+    <string name="pin_off">PIN for new phones: Off</string>
+    <string name="forget">Forget paired phones</string>
+    <string name="forget_message">Every phone will have to enter a PIN again the next time it connects.</string>
+    <string name="pin_title">Enter this code on your iPhone</string>
+    <string name="pin_hint">You only need to do this once for each phone.</string>
+    <string name="alert_channel_name">Mirroring started</string>
+    <string name="alert_open">Tap to show it on this screen</string>
+    <string name="alert_pin">Code for your iPhone: %1$s</string>
+    <string name="previous">Previous track</string>
+    <string name="play_pause">Play or pause</string>
+    <string name="next">Next track</string>
+    <string name="rename_title">Name shown on the iPhone</string>
+    <string name="audio_untitled">Audio</string>
+</resources>
