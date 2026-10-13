@@ -13,6 +13,10 @@ Both target Android 8.0 and later (API 26+) and are written in Kotlin with plain
 
 `app/`
 
+![The Nightdrive dashboard: a map card, a clock and the playing track](docs/images/launcher-dashboard.png)
+
+![The app grid](docs/images/launcher-apps.png)
+
 - A dashboard of two cards you can rearrange: map, now playing, clock, date and weather.
 - A live map without an API key or Play Services, and the current turn from your navigation app.
 - Now-playing controls for whichever app is playing, read from its media session.
@@ -25,6 +29,8 @@ Both target Android 8.0 and later (API 26+) and are written in Kotlin with plain
 ## Nightcast (AirPlay-compatible receiver)
 
 `nightcast/`
+
+![Nightcast waiting for a phone](docs/images/nightcast-ready.png)
 
 The protocol work is done by [UxPlay](https://github.com/FDH2/UxPlay)'s C library, built with the NDK and wrapped in JNI. Kotlin handles decoding, playback and the screen.
 
@@ -77,8 +83,10 @@ Each app builds as `public` or `personal`. `public` is exactly what is in this r
 
 ## Licences
 
+The repository holds separate programs under different licences, so there is no single licence file at the top level.
+
 - **Nightcast is GPL-3.0**, because it links UxPlay. See [`nightcast/LICENSE`](nightcast/LICENSE) and [`nightcast/NOTICE`](nightcast/NOTICE) for the bundled code: UxPlay, libplist and an ALAC decoder. Local changes to UxPlay are listed in [`nightcast/src/main/cpp/third_party/VERSIONS.txt`](nightcast/src/main/cpp/third_party/VERSIONS.txt).
 - **The Inter typeface** used by the launcher is under the SIL Open Font License; see [`INTER-LICENSE.txt`](INTER-LICENSE.txt).
-- **The launcher's own code** has no licence file yet.
+- **The launcher and the media test helper are MIT-licensed**; see [`app/LICENSE`](app/LICENSE) and [`mediatest/LICENSE`](mediatest/LICENSE).
 
 AirPlay, iPhone and CarPlay are trademarks of Apple Inc. This project is not affiliated with or endorsed by Apple.
