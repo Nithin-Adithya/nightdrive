@@ -30,6 +30,15 @@ android {
         }
     }
 
+    // Two editions of the same app. "public" is exactly what is in the repository. "personal"
+    // adds whatever is in src/personal, a folder git ignores, so it can hold things that must
+    // not be published; without that folder the two editions are identical.
+    flavorDimensions += "edition"
+    productFlavors {
+        create("public") { dimension = "edition" }
+        create("personal") { dimension = "edition" }
+    }
+
     externalNativeBuild {
         cmake {
             path = file("src/main/cpp/CMakeLists.txt")

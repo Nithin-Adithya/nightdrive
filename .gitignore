@@ -7,6 +7,8 @@ local.properties
 .cxx/
 .kotlin/
 
-# Personal wallpapers and working screenshots: not part of the project
+# The "personal" edition's extras, built APKs and working screenshots: not part of the project
 app/src/personal/
+nightcast/src/personal/
+apks/
 screenshots/
