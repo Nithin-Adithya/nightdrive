@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="640dp"
+    android:height="480dp"
+    android:viewportWidth="640"
+    android:viewportHeight="480">
+    <path
+        android:fillColor="#FF10161E"
+        android:pathData="M0,0 H640 V480 H0 Z" />
+    <!-- park and water -->
+    <path
+        android:fillColor="#FF13231F"
+        android:pathData="M40,40 H200 V150 H40 Z" />
+    <path
+        android:fillColor="#FF0F2233"
+        android:pathData="M430,300 C500,280 580,320 640,300 V480 H400 C390,410 400,340 430,300 Z" />
+    <!-- minor streets -->
+    <path
+        android:pathData="M0,90 H640 M0,330 H420 M110,0 V480 M330,0 V480 M520,0 V290 M0,410 H400 M220,180 V480"
+        android:strokeColor="#FF1A232F"
+        android:strokeWidth="7" />
+    <!-- arterials -->
+    <path
+        android:pathData="M0,180 H640 M440,0 V480 M0,470 L260,210 L640,40"
+        android:strokeColor="#FF243142"
+        android:strokeLineJoin="round"
+        android:strokeWidth="16" />
+    <!-- route -->
+    <path
+        android:pathData="M150,330 H220 V250 L260,210 L440,130 V60"
+        android:strokeColor="#FF35D6B0"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="7" />
+    <path
+        android:fillColor="#FF0A0D12"
+        android:pathData="M150,330 m-11,0 a11,11 0 1,0 22,0 a11,11 0 1,0 -22,0"
+        android:strokeColor="#FFEEF2F7"
+        android:strokeWidth="5" />
+    <path
+        android:fillColor="#FF35D6B0"
+        android:pathData="M440,60 m-13,0 a13,13 0 1,0 26,0 a13,13 0 1,0 -26,0" />
+</vector>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#FF3E8FD0</color>
+    <color name="dock">#A60B0F1A</color>
+    <color name="card">#E61C1C1E</color>
+    <color name="card_raised">#FF2C2C2E</color>
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#99EBEBF5</color>
+    <color name="accent">#FFFF5A4F</color>
+    <color name="ripple">#33FFFFFF</color>
+    <color name="dot_idle">#80FFFFFF</color>
+</resources>

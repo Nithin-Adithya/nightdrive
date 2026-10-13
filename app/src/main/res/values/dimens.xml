@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="app_icon">112dp</dimen>
+    <dimen name="dock_icon">52dp</dimen>
+    <dimen name="card_radius">15dp</dimen>
+    <dimen name="media_badge">34dp</dimen>
+</resources>

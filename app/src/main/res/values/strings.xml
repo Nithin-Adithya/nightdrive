@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Nightdrive</string>
+    <string name="media_listener_label">Nightdrive now playing</string>
+
+    <string name="dock_maps">Maps</string>
+    <string name="dock_music">Music</string>
+    <string name="dock_phone">Phone</string>
+    <string name="dock_toggle">Switch between dashboard and apps</string>
+
+    <string name="maps_open">Open Maps</string>
+
+    <string name="media_no_access_title">Show what\'s playing</string>
+    <string name="media_no_access_hint">Tap to allow notification access</string>
+    <string name="media_idle_title">Nothing playing</string>
+    <string name="media_idle_hint">Tap to open your music app</string>
+    <string name="media_unknown_title">Unknown track</string>
+    <string name="media_previous">Previous track</string>
+    <string name="media_play_pause">Play or pause</string>
+    <string name="media_next">Next track</string>
+    <string name="media_art">Album art</string>
+    <string name="media_source">Playing app</string>
+
+    <string name="net_wifi">Wi‑Fi</string>
+    <string name="net_cell">Cell</string>
+    <string name="net_wired">LAN</string>
+    <string name="net_offline">Off</string>
+    <string name="net_status">Network status</string>
+    <string name="bt_status">Bluetooth</string>
+    <string name="temperature">%1$d°</string>
+
+    <string name="edit_home">Edit home screen</string>
+    <string name="editing_home">Editing home screen</string>
+    <string name="swap_sides">Swap sides</string>
+    <string name="tap_to_change">Tap to change</string>
+    <string name="choose_widget">Choose a widget</string>
+    <string name="choose_app">Choose an app</string>
+    <string name="dock_add">Add an app to the sidebar</string>
+    <string name="dock_remove">Remove from sidebar</string>
+    <string name="dock_maps_auto">Maps · built-in</string>
+    <string name="dock_music_auto">Music · follows what\'s playing</string>
+    <string name="dock_phone_auto">Phone · built-in</string>
+    <string name="widget_map">Map</string>
+    <string name="widget_media">Now Playing</string>
+    <string name="widget_date">Date</string>
+    <string name="widget_clock">Clock</string>
+
+    <string name="clock_style">Clock style</string>
+    <string name="clock_digital_light">Digital · Light</string>
+    <string name="clock_digital_bold">Digital · Bold</string>
+    <string name="clock_digital_stacked">Digital · Stacked</string>
+    <string name="clock_digital_flip">Digital · Flip</string>
+    <string name="clock_analog_classic">Analog · Classic</string>
+    <string name="clock_analog_minimal">Analog · Minimal</string>
+    <string name="clock_analog_chrono">Analog · Chrono</string>
+
+    <string name="widget_weather">Weather</string>
+    <string name="widget_nav">Next turn</string>
+    <string name="weather_idle">Weather</string>
+    <string name="weather_idle_hint">Tap to allow location</string>
+    <string name="weather_wait_hint">Waiting for a position…</string>
+    <string name="weather_range">H %1$d°  L %2$d°</string>
+    <string name="wx_clear">Clear</string>
+    <string name="wx_partly">Partly cloudy</string>
+    <string name="wx_cloudy">Cloudy</string>
+    <string name="wx_fog">Fog</string>
+    <string name="wx_drizzle">Drizzle</string>
+    <string name="wx_rain">Rain</string>
+    <string name="wx_snow">Snow</string>
+    <string name="wx_storm">Thunderstorm</string>
+    <string name="nav_idle">No active route</string>
+    <string name="nav_idle_hint">Tap to open Maps</string>
+    <string name="options">Options</string>
+    <string name="option_corners">Rounded corners</string>
+    <string name="option_sweep">Smooth second hand</string>
+
+    <string name="themes">Themes</string>
+    <string name="appearance">Appearance</string>
+    <string name="appearance_auto">Auto</string>
+    <string name="appearance_light">Light</string>
+    <string name="appearance_dark">Dark</string>
+    <string name="wallpaper">Wallpaper</string>
+    <string name="choose_photo">Choose photo…</string>
+    <string name="your_photo">Your photo</string>
+    <string name="done">Done</string>
+    <string name="no_file_picker">No file picker found on this device</string>
+    <string name="photo_failed">Couldn\'t use that image</string>
+
+    <string name="no_maps">Google Maps isn\'t installed</string>
+    <string name="no_phone">No phone app found</string>
+    <string name="cannot_open">Couldn\'t open that app</string>
+</resources>

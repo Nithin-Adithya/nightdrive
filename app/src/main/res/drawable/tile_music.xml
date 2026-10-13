@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:bottom="5dp"
+        android:left="5dp"
+        android:right="5dp"
+        android:top="5dp">
+        <shape>
+            <corners android:radius="10dp" />
+            <gradient
+                android:angle="90"
+                android:endColor="#FFFF5E6C"
+                android:startColor="#FFD81F4A" />
+        </shape>
+    </item>
+    <item
+        android:width="24dp"
+        android:height="24dp"
+        android:drawable="@drawable/ic_music"
+        android:gravity="center" />
+</layer-list>

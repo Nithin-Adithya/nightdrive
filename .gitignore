@@ -1,0 +1,12 @@
+.gradle/
+build/
+local.properties
+*.iml
+.idea/
+.DS_Store
+.cxx/
+.kotlin/
+
+# Personal wallpapers and working screenshots: not part of the project
+app/src/personal/
+screenshots/
