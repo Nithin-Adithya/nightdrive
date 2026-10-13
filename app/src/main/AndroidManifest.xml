@@ -27,12 +27,15 @@
         </intent>
     </queries>
 
+    <!-- Cleartext HTTP is for the bundled receiver, on the local network only: a cast's playlists
+         come from its proxy on localhost, and remote-control commands go to the phone. -->
     <application
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Nightdrive">
+        android:theme="@style/Theme.Nightdrive"
+        android:usesCleartextTraffic="true">
 
         <activity
             android:name=".LauncherActivity"

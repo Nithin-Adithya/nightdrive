@@ -34,6 +34,9 @@ android {
 }
 
 dependencies {
+    // The AirPlay-compatible receiver, shipped inside the launcher's APK. It runs in a process
+    // of its own (see its manifest), so its native code cannot take the home screen down.
+    implementation(project(":nightcast"))
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("androidx.viewpager2:viewpager2:1.1.0")

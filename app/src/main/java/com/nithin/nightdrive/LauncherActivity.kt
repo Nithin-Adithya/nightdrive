@@ -623,7 +623,7 @@ class LauncherActivity : Activity() {
             DashboardPrefs.saveDock(this, dock)
             rebuildDock()
         }
-        val choices = apps.filter { it.component.packageName != packageName }.map { app ->
+        val choices = apps.filter { it.component.className != AppLoader.THEMES_ENTRY }.map { app ->
             val flat = app.component.flattenToString()
             Choice(app.label, app.icon, flat == current) {
                 if (index >= 0) dock[index] = flat else dock.add(flat)
@@ -735,7 +735,7 @@ class LauncherActivity : Activity() {
     }
 
     private fun launch(component: ComponentName, from: View? = null) {
-        if (component.packageName == packageName) {
+        if (component.className == AppLoader.THEMES_ENTRY) {
             showThemePicker()
             return
         }

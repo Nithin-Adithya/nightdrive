@@ -18,7 +18,8 @@ object AppLoader {
         val pm = context.packageManager
         val intent = Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER)
         return pm.queryIntentActivities(intent, 0)
-            .filter { it.activityInfo.packageName != context.packageName }
+            // Leave out the home screen itself, but keep the receiver that ships in this APK.
+            .filter { it.activityInfo.name != LauncherActivity::class.java.name }
             .map {
                 val packageName = it.activityInfo.packageName
                 val label = it.loadLabel(pm).toString()

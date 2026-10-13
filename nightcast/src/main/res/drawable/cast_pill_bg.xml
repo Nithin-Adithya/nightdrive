@@ -3,7 +3,7 @@
     android:color="#33FFFFFF">
     <item>
         <shape>
-            <solid android:color="@color/card_raised" />
+            <solid android:color="@color/cast_card_raised" />
             <corners android:radius="24dp" />
         </shape>
     </item>

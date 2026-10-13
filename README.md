@@ -1,11 +1,11 @@
 # Nightdrive
 
-Two Android apps for an aftermarket car head unit:
+One Android app for an aftermarket car head unit, in two parts:
 
 - **Nightdrive** — a home-screen launcher built for a wide landscape display.
 - **Nightcast** — an AirPlay-compatible receiver, so an iPhone can mirror its screen and play audio to the head unit.
 
-Both target Android 8.0 and later (API 26+) and are written in Kotlin with plain Android views.
+Both ship in a single APK. Nightcast appears as its own icon in the launcher's app grid and runs in a separate process, so a fault in the receiver cannot take the home screen down. The app targets Android 8.0 and later (API 26+) and is written in Kotlin with plain Android views.
 
 > **Status.** Nightdrive runs on a head-unit emulator. Nightcast has only been tested there too: against a simulated phone, never a real iPhone. Treat everything in the Nightcast section as "built, not yet proven".
 
@@ -28,7 +28,7 @@ Both target Android 8.0 and later (API 26+) and are written in Kotlin with plain
 
 ## Nightcast (AirPlay-compatible receiver)
 
-`nightcast/`
+`nightcast/` — an Android library that the launcher app includes.
 
 ![Nightcast waiting for a phone](docs/images/nightcast-ready.png)
 
@@ -43,7 +43,7 @@ What it is built to do:
 - **PIN pairing**: a new phone types a 4-digit code shown on the head unit, once.
 - **Play, pause and skip** sent back to the phone.
 
-To use it, put the phone and the head unit on the same Wi-Fi (or join the head unit to the phone's hotspot), open Nightcast, and choose it under Screen Mirroring in the iPhone's Control Centre.
+To use it, put the phone and the head unit on the same Wi-Fi (or join the head unit to the phone's hotspot), open Nightcast from the app grid once, and choose it under Screen Mirroring in the iPhone's Control Centre.
 
 ### Known limits
 
@@ -66,10 +66,10 @@ sdk.dir=/path/to/android/sdk
 Then:
 
 ```bash
-./gradlew :app:assemblePublicDebug :nightcast:assemblePublicDebug
+./gradlew :app:assemblePublicDebug
 ```
 
-The APKs land in `app/build/outputs/apk/public/debug/` and `nightcast/build/outputs/apk/public/debug/`.
+The APK, containing both the launcher and the receiver, lands in `app/build/outputs/apk/public/debug/`.
 
 Device tests for Nightcast's video decoder and casting player, with an emulator or device attached:
 
@@ -79,14 +79,15 @@ Device tests for Nightcast's video decoder and casting player, with an emulator 
 
 ### Editions
 
-Each app builds as `public` or `personal`. `public` is exactly what is in this repository. `personal` also picks up a git-ignored `src/personal/` folder, for resources that should not be published (for example your own wallpapers; see `Themes.all()`). Without that folder the two are identical.
+The app builds as `public` or `personal`. `public` is exactly what is in this repository. `personal` also picks up a git-ignored `src/personal/` folder, for resources that should not be published (for example your own wallpapers; see `Themes.all()`). Without that folder the two are identical.
 
 ## Licences
 
-The repository holds separate programs under different licences, so there is no single licence file at the top level.
+The repository holds code under different licences, so there is no single licence file at the top level.
 
+- **The built APK is GPL-3.0 as a whole**, because it contains Nightcast. If you pass the APK on, the GPL's terms apply to all of it.
 - **Nightcast is GPL-3.0**, because it links UxPlay. See [`nightcast/LICENSE`](nightcast/LICENSE) and [`nightcast/NOTICE`](nightcast/NOTICE) for the bundled code: UxPlay, libplist and an ALAC decoder. Local changes to UxPlay are listed in [`nightcast/src/main/cpp/third_party/VERSIONS.txt`](nightcast/src/main/cpp/third_party/VERSIONS.txt).
 - **The Inter typeface** used by the launcher is under the SIL Open Font License; see [`INTER-LICENSE.txt`](INTER-LICENSE.txt).
-- **The launcher and the media test helper are MIT-licensed**; see [`app/LICENSE`](app/LICENSE) and [`mediatest/LICENSE`](mediatest/LICENSE).
+- **The launcher's source and the media test helper are MIT-licensed**, so the launcher code can be reused on its own without Nightcast; see [`app/LICENSE`](app/LICENSE) and [`mediatest/LICENSE`](mediatest/LICENSE).
 
 AirPlay, iPhone and CarPlay are trademarks of Apple Inc. This project is not affiliated with or endorsed by Apple.

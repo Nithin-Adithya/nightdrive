@@ -4,24 +4,24 @@
         <item name="android:windowBackground">@android:color/black</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:colorAccent">@color/accent</item>
-        <item name="android:textColorPrimary">@color/text_primary</item>
-        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:colorAccent">@color/cast_accent</item>
+        <item name="android:textColorPrimary">@color/cast_text_primary</item>
+        <item name="android:textColorSecondary">@color/cast_text_secondary</item>
     </style>
 
-    <style name="Pill">
+    <style name="CastPill">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">48dp</item>
         <item name="android:layout_marginHorizontal">6dp</item>
-        <item name="android:background">@drawable/pill_bg</item>
+        <item name="android:background">@drawable/cast_pill_bg</item>
         <item name="android:gravity">center</item>
         <item name="android:paddingStart">24dp</item>
         <item name="android:paddingEnd">24dp</item>
-        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColor">@color/cast_text_primary</item>
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="Transport">
+    <style name="CastTransport">
         <item name="android:layout_width">72dp</item>
         <item name="android:layout_height">72dp</item>
         <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>

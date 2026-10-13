@@ -70,10 +70,10 @@ class ReceiverService : Service(), Receiver.Listener {
         super.onCreate()
         val manager = getSystemService(NotificationManager::class.java)
         manager.createNotificationChannel(
-            NotificationChannel(CHANNEL, getString(R.string.channel_name), NotificationManager.IMPORTANCE_LOW)
+            NotificationChannel(CHANNEL, getString(R.string.cast_channel_name), NotificationManager.IMPORTANCE_LOW)
         )
         manager.createNotificationChannel(
-            NotificationChannel(ALERT_CHANNEL, getString(R.string.alert_channel_name), NotificationManager.IMPORTANCE_HIGH)
+            NotificationChannel(ALERT_CHANNEL, getString(R.string.cast_alert_channel_name), NotificationManager.IMPORTANCE_HIGH)
         )
         notificationText = statusText()
         val type = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PLAYBACK else 0
@@ -179,9 +179,9 @@ class ReceiverService : Service(), Receiver.Listener {
         val open = PendingIntent.getActivity(
             this, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
-        val text = if (pin != null) getString(R.string.alert_pin, pin) else getString(R.string.alert_open)
+        val text = if (pin != null) getString(R.string.cast_alert_pin, pin) else getString(R.string.cast_alert_open)
         val alert = Notification.Builder(this, ALERT_CHANNEL)
-            .setSmallIcon(R.drawable.ic_cast)
+            .setSmallIcon(R.drawable.cast_ic_cast)
             .setContentTitle(statusText())
             .setContentText(text)
             .setContentIntent(open)
@@ -258,15 +258,15 @@ class ReceiverService : Service(), Receiver.Listener {
     }
 
     private fun statusText(): String {
-        val client = Receiver.clientName ?: getString(R.string.unknown_device)
+        val client = Receiver.clientName ?: getString(R.string.cast_unknown_device)
         return when {
-            Receiver.pin != null -> getString(R.string.status_pairing)
-            Receiver.mirroring -> getString(R.string.status_mirroring, client)
-            Receiver.casting -> getString(R.string.status_casting, client)
-            Receiver.photo != null -> getString(R.string.status_photo, client)
-            Receiver.connections > 0 -> getString(R.string.status_playing, client)
-            Receiver.port > 0 -> getString(R.string.status_ready, Receiver.name)
-            else -> getString(R.string.status_offline)
+            Receiver.pin != null -> getString(R.string.cast_status_pairing)
+            Receiver.mirroring -> getString(R.string.cast_status_mirroring, client)
+            Receiver.casting -> getString(R.string.cast_status_casting, client)
+            Receiver.photo != null -> getString(R.string.cast_status_photo, client)
+            Receiver.connections > 0 -> getString(R.string.cast_status_playing, client)
+            Receiver.port > 0 -> getString(R.string.cast_status_ready, Receiver.name)
+            else -> getString(R.string.cast_status_offline)
         }
     }
 
@@ -276,8 +276,8 @@ class ReceiverService : Service(), Receiver.Listener {
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
         return Notification.Builder(this, CHANNEL)
-            .setSmallIcon(R.drawable.ic_cast)
-            .setContentTitle(getString(R.string.app_name))
+            .setSmallIcon(R.drawable.cast_ic_cast)
+            .setContentTitle(getString(R.string.cast_name))
             .setContentText(notificationText)
             .setContentIntent(open)
             .setOngoing(true)

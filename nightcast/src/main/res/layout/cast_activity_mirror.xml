@@ -25,7 +25,7 @@
         android:id="@+id/idle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/bg"
+        android:background="@color/cast_bg"
         android:gravity="center"
         android:orientation="vertical"
         android:paddingHorizontal="64dp">
@@ -34,14 +34,14 @@
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:importantForAccessibility="no"
-            android:src="@drawable/ic_cast" />
+            android:src="@drawable/cast_ic_cast" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="@string/idle_title"
-            android:textColor="@color/text_secondary"
+            android:text="@string/cast_idle_title"
+            android:textColor="@color/cast_text_secondary"
             android:textSize="18sp" />
 
         <TextView
@@ -53,7 +53,7 @@
             android:fontFamily="sans-serif-medium"
             android:paddingHorizontal="12dp"
             android:paddingVertical="4dp"
-            android:textColor="@color/text_primary"
+            android:textColor="@color/cast_text_primary"
             android:textSize="40sp" />
 
         <TextView
@@ -64,7 +64,7 @@
             android:gravity="center"
             android:lineSpacingMultiplier="1.15"
             android:maxWidth="640dp"
-            android:textColor="@color/text_secondary"
+            android:textColor="@color/cast_text_secondary"
             android:textSize="18sp" />
 
         <TextView
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:gravity="center"
-            android:textColor="@color/text_primary"
+            android:textColor="@color/cast_text_primary"
             android:textSize="16sp" />
 
         <LinearLayout
@@ -84,17 +84,17 @@
 
             <TextView
                 android:id="@+id/pin_toggle"
-                style="@style/Pill" />
+                style="@style/CastPill" />
 
             <TextView
                 android:id="@+id/forget"
-                style="@style/Pill"
-                android:text="@string/forget" />
+                style="@style/CastPill"
+                android:text="@string/cast_forget" />
 
             <TextView
                 android:id="@+id/auto_open"
-                style="@style/Pill"
-                android:text="@string/auto_open" />
+                style="@style/CastPill"
+                android:text="@string/cast_auto_open" />
         </LinearLayout>
     </LinearLayout>
 
@@ -102,7 +102,7 @@
         android:id="@+id/pin_panel"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/bg"
+        android:background="@color/cast_bg"
         android:gravity="center"
         android:orientation="vertical"
         android:visibility="gone">
@@ -110,8 +110,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/pin_title"
-            android:textColor="@color/text_secondary"
+            android:text="@string/cast_pin_title"
+            android:textColor="@color/cast_text_secondary"
             android:textSize="22sp" />
 
         <TextView
@@ -120,15 +120,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:fontFamily="sans-serif-medium"
-            android:textColor="@color/text_primary"
+            android:textColor="@color/cast_text_primary"
             android:textSize="96sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="@string/pin_hint"
-            android:textColor="@color/text_secondary"
+            android:text="@string/cast_pin_hint"
+            android:textColor="@color/cast_text_secondary"
             android:textSize="16sp" />
     </LinearLayout>
 
@@ -136,7 +136,7 @@
         android:id="@+id/now_playing"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/bg"
+        android:background="@color/cast_bg"
         android:gravity="center"
         android:orientation="horizontal"
         android:paddingHorizontal="64dp"
@@ -146,7 +146,7 @@
             android:id="@+id/art"
             android:layout_width="240dp"
             android:layout_height="240dp"
-            android:background="@drawable/art_bg"
+            android:background="@drawable/cast_art_bg"
             android:importantForAccessibility="no"
             android:scaleType="centerCrop" />
 
@@ -161,7 +161,7 @@
                 android:id="@+id/source"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/accent"
+                android:textColor="@color/cast_accent"
                 android:textSize="16sp" />
 
             <TextView
@@ -172,7 +172,7 @@
                 android:ellipsize="end"
                 android:fontFamily="sans-serif-medium"
                 android:maxLines="2"
-                android:textColor="@color/text_primary"
+                android:textColor="@color/cast_text_primary"
                 android:textSize="36sp" />
 
             <TextView
@@ -182,7 +182,7 @@
                 android:layout_marginTop="8dp"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:textColor="@color/text_secondary"
+                android:textColor="@color/cast_text_secondary"
                 android:textSize="22sp" />
 
             <LinearLayout
@@ -196,21 +196,21 @@
 
                 <ImageButton
                     android:id="@+id/previous"
-                    style="@style/Transport"
-                    android:contentDescription="@string/previous"
-                    android:src="@drawable/ic_previous" />
+                    style="@style/CastTransport"
+                    android:contentDescription="@string/cast_previous"
+                    android:src="@drawable/cast_ic_previous" />
 
                 <ImageButton
                     android:id="@+id/play_pause"
-                    style="@style/Transport"
-                    android:contentDescription="@string/play_pause"
-                    android:src="@drawable/ic_pause" />
+                    style="@style/CastTransport"
+                    android:contentDescription="@string/cast_play_pause"
+                    android:src="@drawable/cast_ic_pause" />
 
                 <ImageButton
                     android:id="@+id/next"
-                    style="@style/Transport"
-                    android:contentDescription="@string/next"
-                    android:src="@drawable/ic_next" />
+                    style="@style/CastTransport"
+                    android:contentDescription="@string/cast_next"
+                    android:src="@drawable/cast_ic_next" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

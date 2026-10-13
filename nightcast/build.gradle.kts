@@ -1,7 +1,8 @@
-// AirPlay receiver for the head unit: an iPhone mirrors its screen and plays audio to this app.
+// AirPlay-compatible receiver for the head unit: an iPhone mirrors its screen and plays audio to
+// it. Built as a library that the launcher app includes, so both ship in one APK.
 // The protocol core is UxPlay's C library (GPL-3.0), built with the NDK; see src/main/cpp.
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
 
@@ -11,11 +12,7 @@ android {
     ndkVersion = "27.2.12479018"
 
     defaultConfig {
-        applicationId = "com.nithin.nightcast"
         minSdk = 26
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         ndk {
@@ -30,9 +27,7 @@ android {
         }
     }
 
-    // Two editions of the same app. "public" is exactly what is in the repository. "personal"
-    // adds whatever is in src/personal, a folder git ignores, so it can hold things that must
-    // not be published; without that folder the two editions are identical.
+    // The same two editions as the app that includes this library; see app/build.gradle.kts.
     flavorDimensions += "edition"
     productFlavors {
         create("public") { dimension = "edition" }

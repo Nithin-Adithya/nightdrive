@@ -40,7 +40,7 @@ class MirrorActivity : Activity(), SurfaceHolder.Callback, Receiver.Listener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_mirror)
+        setContentView(R.layout.cast_activity_mirror)
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         WindowCompat.setDecorFitsSystemWindows(window, false)
         WindowInsetsControllerCompat(window, window.decorView).apply {
@@ -130,16 +130,16 @@ class MirrorActivity : Activity(), SurfaceHolder.Callback, Receiver.Listener {
         val running = Receiver.port > 0
         val addresses = Receiver.localAddresses()
         findViewById<TextView>(R.id.name).text = Receiver.name
-        findViewById<TextView>(R.id.hint).text = getString(R.string.hint_connect, Receiver.name)
+        findViewById<TextView>(R.id.hint).text = getString(R.string.cast_hint_connect, Receiver.name)
         findViewById<TextView>(R.id.status).text = when {
-            addresses.isEmpty() -> getString(R.string.status_no_network)
-            !running -> getString(R.string.status_starting)
-            else -> getString(R.string.status_network, addresses.joinToString("  ·  "))
+            addresses.isEmpty() -> getString(R.string.cast_status_no_network)
+            !running -> getString(R.string.cast_status_starting)
+            else -> getString(R.string.cast_status_network, addresses.joinToString("  ·  "))
         }
         findViewById<View>(R.id.auto_open).visibility =
             if (Settings.canDrawOverlays(this)) View.GONE else View.VISIBLE
         findViewById<TextView>(R.id.pin_toggle).setText(
-            if (Receiver.requirePin) R.string.pin_on else R.string.pin_off
+            if (Receiver.requirePin) R.string.cast_pin_on else R.string.cast_pin_off
         )
         findViewById<View>(R.id.forget).visibility =
             if (Receiver.requirePin && Receiver.hasPairedPhones(this)) View.VISIBLE else View.GONE
@@ -148,24 +148,24 @@ class MirrorActivity : Activity(), SurfaceHolder.Callback, Receiver.Listener {
     private fun renderNowPlaying() {
         val art = Receiver.coverArt
         findViewById<ImageView>(R.id.art).apply {
-            if (art != null) setImageBitmap(art) else setImageResource(R.drawable.ic_cast)
+            if (art != null) setImageBitmap(art) else setImageResource(R.drawable.cast_ic_cast)
             clipToOutline = true
         }
-        findViewById<TextView>(R.id.track).text = Receiver.title ?: getString(R.string.audio_untitled)
+        findViewById<TextView>(R.id.track).text = Receiver.title ?: getString(R.string.cast_audio_untitled)
         findViewById<TextView>(R.id.artist).text =
             listOfNotNull(Receiver.artist, Receiver.album).filter { it.isNotEmpty() }.joinToString(" — ")
         findViewById<TextView>(R.id.source).text =
-            getString(R.string.status_playing, Receiver.clientName ?: getString(R.string.unknown_device))
+            getString(R.string.cast_status_playing, Receiver.clientName ?: getString(R.string.cast_unknown_device))
         findViewById<View>(R.id.transport).visibility = if (Receiver.remoteAvailable) View.VISIBLE else View.GONE
         findViewById<ImageView>(R.id.play_pause).setImageResource(
-            if (Receiver.playing) R.drawable.ic_pause else R.drawable.ic_play
+            if (Receiver.playing) R.drawable.cast_ic_pause else R.drawable.cast_ic_play
         )
     }
 
     private fun confirmForget() {
         AlertDialog.Builder(this)
-            .setMessage(R.string.forget_message)
-            .setPositiveButton(R.string.forget) { _, _ -> Receiver.forgetPairedPhones(this) }
+            .setMessage(R.string.cast_forget_message)
+            .setPositiveButton(R.string.cast_forget) { _, _ -> Receiver.forgetPairedPhones(this) }
             .setNegativeButton(android.R.string.cancel, null)
             .show()
     }
@@ -191,7 +191,7 @@ class MirrorActivity : Activity(), SurfaceHolder.Callback, Receiver.Listener {
             setSelection(text.length)
         }
         AlertDialog.Builder(this)
-            .setTitle(R.string.rename_title)
+            .setTitle(R.string.cast_rename_title)
             .setView(input)
             .setPositiveButton(android.R.string.ok) { _, _ ->
                 val name = input.text.toString().trim()
